@@ -14,4 +14,41 @@
 				<%= f.text_area :introduction %>
 			</div>
 
-			
+			<div class="field">
+				<%= f.label :phone_number, "電話番号" %>
+				<%= f.text_field :phone_number %>
+			</div>
+
+			<div class="field">
+				<%#= f.label :postal_code, "郵便番号" %>
+				<%#= f.text_field :postal_code %>
+			</div>
+
+			<div class="field">
+				<%= f.label :address, "住所" %>
+				<%= f.text_field :address %>
+			</div>
+
+			<div class="field">
+				<%= f.label :email, "メールアドレス" %>
+				<%= f.text_field :email %>
+			</div>
+
+			<div class="field">
+				<%#= f.label :genre, "ジャンル" %>
+				<%#= f.text_field :genre %>
+			</div>
+
+			<div class="field">
+				<%= f.label :pictures_images, "写真" %><br>
+				<%= f.attachment_field :pictures_images, multiple: true %>
+			</div>
+
+			<div class="submit-btn">
+				<%= f.submit "投稿", class: "btn btn-primary" %>
+	        </div>
+
+		<% end %>
+
+	</div>
+</div>
