@@ -9,19 +9,19 @@
 Menu.create!(
   [
     {
-      type: "ドリンク"
+      category: "ドリンク"
     },
     {
-      type: "コース"
+      category: "コース"
     },
     {
-      type: "料理"
+      category: "料理"
     },
     {
-      type: "デザート"
+      category: "デザート"
     },
     {
-      type: "その他"
+      category: "その他"
     }
   ])
 
@@ -100,7 +100,7 @@ Area.create!(
 
   ])
 
-Genre.create!{
+Genre.create!(
   [
     {
       category: "和食"
@@ -114,7 +114,6 @@ Genre.create!{
     {
       category: "その他料理"
     }
-  ])
-}
+])
 
 
