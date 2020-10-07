@@ -1,2 +1,17 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<h2 class="restaurant-new-title">店舗登録</h2>
+
+		<%= form_with model: @restaurant, local:true, class: "form" do |f| %>
+
+			<div class="field">
+				<%= f.label :name, "店名" %>
+				<%= f.text_field :name %>
+			</div>
+
+			<div class="field">
+				<%= f.label :introduction, "説明" %>
+				<%= f.text_area :introduction %>
+			</div>
+
+			
