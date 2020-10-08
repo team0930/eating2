@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       # レストラン検索結果ページ
       get 'search'
     end
-  	resources :comments, only:[:new, :create, :show, :edit, :update, :destroy]
+  	resources :comments, only:[:create, :destroy]
   	resource :favorite, only: [:create, :destroy]
   end
   resources :menus
