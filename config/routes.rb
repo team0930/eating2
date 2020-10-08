@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-	
+
   # メインページルーティング
   root 'home#top'
   get 'home/about' => 'home#about'
-  
+
   devise_for :users
   resources :users, only: [:show, :edit, :update] 
   #退会処理用
