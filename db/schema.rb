@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_070354) do
+ActiveRecord::Schema.define(version: 2020_10_09_012900) do
 
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -38,14 +39,15 @@ ActiveRecord::Schema.define(version: 2020_10_06_070354) do
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
   end
 
   create_table "menus", force: :cascade do |t|
-    t.integer "restaurant_id", null: false
     t.string "name", null: false
     t.string "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category", default: 0, null: false
   end
 
   create_table "pictures", force: :cascade do |t|
