@@ -21,7 +21,7 @@
 
 			<div class="form">
 				<%= f.label :エリア %>
-				<%= f.collection_select :area_id, Area.all, :id, :name,class:"select-controll" %>
+				<%= f.collection_select :area_id, Area.all, :id, :name, class:"select-controll" %>
 			</div>
 
 			<div class="field">
@@ -41,7 +41,7 @@
 
 			<div class="form">
 				<%= f.label :ジャンル %>
-				<%= f.collection_select :genre_id, Genre.all, :id, :name,class:"select-controll" %>
+				<%= f.collection_select :genre_id, Genre.all, :id, :category, class:"select-controll" %>
 			</div>
 
 			<div class="field">

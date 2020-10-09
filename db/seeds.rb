@@ -95,11 +95,7 @@ Genre.create!(
     {
       category: "その他料理"
     }
-<<<<<<< HEAD
   ])
 
-=======
-])
->>>>>>> origin/develop
 
 

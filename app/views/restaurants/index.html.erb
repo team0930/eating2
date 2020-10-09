@@ -3,9 +3,10 @@
 
 <% @restaurants.each do |r| %>
 
-	<% r.pictures.each do |i| %>
-		<%= attachment_image_tag i, :image, class: "blog-index-photo" %>
-	<% end %>
+	<%# r.pictures.each do |i| %>
+		<%#= attachment_image_tag i, :image, class: "blog-index-photo" %>
+	<%# end %>
 
 	<%= r.name %>
+	<%= r.area.name %>
 <% end %>

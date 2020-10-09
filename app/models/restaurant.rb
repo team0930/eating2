@@ -4,6 +4,7 @@ class Restaurant < ApplicationRecord
 	# has_many :comments, dependent: :destroy
 	# has_many :favorites, dependent: :destroy
 
+	belongs_to :area
 	belongs_to :genre
 	has_many :pictures, dependent: :destroy
   	accepts_attachments_for :pictures, attachment: :image
