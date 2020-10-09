@@ -100,7 +100,7 @@ Area.create!(
 
   ])
 
-Genre.create!{
+Genre.create!(
   [
     {
       category: "和食"
@@ -115,6 +115,6 @@ Genre.create!{
       category: "その他料理"
     }
   ])
-}
+
 
 

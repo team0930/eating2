@@ -19,9 +19,14 @@
 				<%= f.text_field :phone_number %>
 			</div>
 
+			<div class="form">
+				<%= f.label :エリア %>
+				<%= f.collection_select :area_id, Area.all, :id, :name,class:"select-controll" %>
+			</div>
+
 			<div class="field">
-				<%#= f.label :postal_code, "郵便番号" %>
-				<%#= f.text_field :postal_code %>
+				<%= f.label :postal_code, "郵便番号" %>
+				<%= f.text_field :postal_code %>
 			</div>
 
 			<div class="field">
@@ -34,9 +39,9 @@
 				<%= f.text_field :email %>
 			</div>
 
-			<div class="field">
-				<%#= f.label :genre, "ジャンル" %>
-				<%#= f.text_field :genre %>
+			<div class="form">
+				<%= f.label :ジャンル %>
+				<%= f.collection_select :genre_id, Genre.all, :id, :name,class:"select-controll" %>
 			</div>
 
 			<div class="field">
