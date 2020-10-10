@@ -95,6 +95,7 @@ Genre.create!(
     {
       category: "その他料理"
     }
-])
+  ])
+
 
 
