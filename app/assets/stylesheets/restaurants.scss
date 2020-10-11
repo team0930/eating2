@@ -3,5 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .restaurant-show-page {
-	margin-top: 30px;
+	margin: 30px 0;
+}
+
+.restaurant-img {
+	background-color: orange;
+	width: 250px;
+	height: 250px;
+}
+.restaurant-show-page > row {
+	margin: 25px 0;
 }

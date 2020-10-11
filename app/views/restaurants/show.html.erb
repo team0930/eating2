@@ -2,19 +2,52 @@
 
 	<div class="row">
 
-		<div class="col-md-2">
-
-
+		<div class="col-md-3">
+			<div class="restaurant-img">
+			<%#= attachment_image_tag i, :image, class: "blog-index-photo" %>
+			</div>
 		</div>
 
 		<div class="col-md-8">
-			<%= @restaurant.name %>
-			<%= @restaurant.area.name %>
+			<div class="restaurant-text">
+				<h2><%= @restaurant.name %></h2>
+				<span class="label label-default"><%= @restaurant.area.name %></span>
+				<p><%= @restaurant.introduction %></p>
+
+			</div>
 		</div>
 	</div>
 
 	<div class="row">
+		<div class="col-md-10">
+		<h5>店舗情報詳細</h5>
+		<table class="table table-bordered">
+			<tr>
+				<th>店名</th>
+				<td><%= @restaurant.name %></td>
+			</tr>
+			<tr>
+				<th>ジャンル</th>
+				<td><%= @restaurant.genre.category %></td>
+			</tr>
+			<tr>
+				<th>お問い合わせ</th>
+				<td><%= @restaurant.phone_number %></td>
+			</tr>
+			<tr>
+				<th>住所</th>
+				<td><%= @restaurant.postal_code %><br><%= @restaurant.address %></td>
+			</tr>
+		</table>
+		</div>
+
+	</div>
+
+	<div class="showpage-btn row">
 		<%= link_to '一覧へ', restaurants_path, class:"btn btn-success" %>
+		<% if current_user.id = @restaurant.user_id %>
+			<%= link_to '店舗情報編集へ', edit_restaurant_path, class:"btn btn-danger" %>
+		<% end %>
 	</div>
 
 </div>
