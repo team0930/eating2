@@ -1,11 +1,10 @@
+<div class="container">
 	<h1>一覧</h1>
 	<div><%= link_to " 新規投稿", new_restaurant_path, class: 'btn btn-info' %></div>
 
 	<!-- レストラン一覧 -->
-	<div class="restaurants">
+	<div class="restaurants row">
 		<% @restaurants.each do |r| %>
-
-			<div class="restaurants_row row">
 				<%# r.pictures.each do |i| %>
 					<%#= attachment_image_tag i, :image, class: "blog-index-photo" %>
 				<%# end %>
@@ -14,8 +13,6 @@
 				<%= r.area.name %>
 
 				<%= link_to '詳細へ', restaurant_path(r.id), class:"btn btn-warning" %>
-
-			</div>
 
 		<% end %>
 	</div>
