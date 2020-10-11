@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # メインページルーティング
   root 'home#top'
   get 'home/about' => 'home#about'
+  get 'search' => 'searchs#search'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update] 
