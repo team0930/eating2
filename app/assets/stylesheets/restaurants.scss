@@ -1,3 +1,22 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// [ 店舗詳細ページ ]
+.restaurant-show-page {
+	margin: 30px 0;
+}
+.restaurant-show-page > row {
+	margin: 25px 0;
+}
+.restaurant-name {
+	font-size: 36px;
+	margin: 0 10px;
+}
+.restaurant-intro {
+	font-size: 18px;
+}
+.showpage-btn {
+	text-align: center;
+}
