@@ -2,11 +2,14 @@
 <div><%= link_to " 新規投稿", new_restaurant_path, class: 'btn btn-info' %></div>
 
 <% @restaurants.each do |r| %>
+		<%# r.pictures.each do |i| %>
+			<%#= attachment_image_tag i, :image, class: "blog-index-photo" %>
+		<%# end %>
 
-	<%# r.pictures.each do |i| %>
-		<%#= attachment_image_tag i, :image, class: "blog-index-photo" %>
-	<%# end %>
-
-	<%= r.name %>
-	<%= r.area.name %>
+		<%= r.name %>
+		<%= r.area.name %>
+		<%= link_to '店舗詳細へ', restaurant_path(r.id), class:"btn btn-warning" %>
 <% end %>
+
+
+
