@@ -7,7 +7,6 @@ class Menu < ApplicationRecord
     	"単品料理":        2,
     	"ドリンク":        3,
     	"デザート":        4,
-    	"その他":          5,
   }
 
 end
