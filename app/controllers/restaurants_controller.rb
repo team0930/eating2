@@ -5,6 +5,10 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @course_menus = Menu.where(category: "コース")
+    @alacarte_menus = Menu.where(category: "単品料理")
+    @drink_menus = Menu.where(category: "ドリンク")
+    @desert_menus = Menu.where(category: "デザート")
   end
 
   def new
