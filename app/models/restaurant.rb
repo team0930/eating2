@@ -4,7 +4,9 @@ class Restaurant < ApplicationRecord
 	has_many :menus, dependent: :destroy
 	# has_many :comments, dependent: :destroy
 	# has_many :favorites, dependent: :destroy
-
+    has_many :comments, dependent: :destroy
+    has_many :favorites, dependent: :destroy
+    
 	belongs_to :area
 	belongs_to :genre
 	has_many :pictures, dependent: :destroy
@@ -16,6 +18,10 @@ class Restaurant < ApplicationRecord
 	#   validates :phone_number
 	#   validates :postal_code
 	#   validates :address
+	#   validates :area
+	#   validates :genre
+	#   validates :email
+	#   validates :pictures
 	# end
 
 	def favorited_by?(user)

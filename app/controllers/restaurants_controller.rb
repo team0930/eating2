@@ -17,12 +17,16 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
+    unless @restaurant.user_id == current_user.id
+      redirect_to restaurants_path
+    end
   end
 
   def create
   	@restaurant = Restaurant.new(restaurant_params)
     @restaurant.user = current_user
-  	if @restaurant.save!
+  	if @restaurant.save
   		redirect_to restaurants_path
   	else
   		@restaurant.pictures.new
