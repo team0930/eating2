@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER }
 
   has_many :restaurants, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
