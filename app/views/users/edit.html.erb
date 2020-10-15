@@ -1,2 +1,17 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="user-edit">
+  <div class="user-edit__form">
+    <%= form_with model: @user, method: :patch, local: true do |f| %>
+      <p>ユーザーネーム</p>
+      <%= f.text_field :name, autocomplete: "name" %>
+      <p>メールアドレス</p>
+      <%= f.email_field :email, autocomplete: "email" %>
+      <p>電話番号</p>
+      <%= f.phone_field :phone_number, autocomplete: "phone_number" %>
+
+      <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
+
+    <% end %>
+
+    <%= link_to "退会する", users_withdraw_path(current_user),method: :put, class: "btn btn-danger", data: {confirm: '本当に退会しますか？'} %>
+  </div>
+</div>
