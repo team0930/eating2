@@ -1,0 +1,24 @@
+<div class="container">
+
+	<h1>検索結果</h1>
+
+    <div class="row">
+
+        <table class='table table-hover table-inverse'>
+        	<tbody>
+				<h1>一覧</h1>
+				<div><%= link_to " 新規投稿", new_restaurant_path, class: 'btn btn-info' %></div>
+
+				    <% @restaurants.each do |r| %>
+				    <tr>
+						<td><%= attachment_image_tag r.pictures[0], :image, size: '150x150', class: "blog-index-photo" %></td>
+						<td><%= r.name %><br>
+						    <%= r.area.name %></td>
+						<td><%= link_to '店舗詳細へ', restaurant_path(r.id), class:"btn btn-warning" %></td>
+					</tr>
+					<% end %>
+			</tbody>
+		</table>
+
+	</div>
+ </div>
