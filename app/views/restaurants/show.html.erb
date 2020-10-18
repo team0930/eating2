@@ -17,11 +17,7 @@
 
 			</div>
 
-			<!-- 仮で置いてみました -->
-			<div class="">
-				<P>☆☆☆☆☆(仮)</P>
-				<%#= @post.star %>
-			</div>
+				<p id="average"></p>
 
 			<div class="restaurant-intro">
 				<p><%= @restaurant.introduction %></p>
@@ -85,4 +81,21 @@
 	</div>
 
 </div>
+
+<script>
+  $('#average').raty({
+    size: 36, // 星のサイズ
+    score: "<%=@restaurant.comments.average(:star).to_f.round(1) %>",//星の平均値。小数点第１。
+    starOff: "<%=asset_path('star-off.png')%>",// 星なし
+    starOn: "<%=asset_path('star-on.png')%>",//星有り
+    starHalf: "<%=asset_path('star-half.png')%>",// 星半分
+    scoreName: 'review[star]',
+    half: true,// 星の半分の入力を実行
+    readOnly: true, //星の評価を固定化
+  });
+</script>
+
+
+
+
 

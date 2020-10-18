@@ -4,8 +4,9 @@ class CommentsController < ApplicationController
     restaurant = Restaurant.find(params[:restaurant_id])
     comment = restaurant.comments.new(comment_params)
     comment.user_id = current_user.id
-    @post.score = params[:review][:star]
-    comment.save
+    comment.star = params[:review][:star]
+    #byebug
+    comment.save!
     redirect_to request.referer
   end
 
@@ -15,6 +16,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:title, :content)
+    params.require(:comment).permit(:title, :content, :image)
   end
 end
