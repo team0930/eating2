@@ -1,17 +1,27 @@
-<div class="user-edit">
+<div class="user-edit container">
   <div class="user-edit__form">
+    <h2>マイページ設定</h2>
     <%= form_with model: @user, method: :patch, local: true do |f| %>
-      <p>ユーザーネーム</p>
-      <%= f.text_field :name, autocomplete: "name" %>
-      <p>メールアドレス</p>
-      <%= f.email_field :email, autocomplete: "email" %>
-      <p>電話番号</p>
-      <%= f.phone_field :phone_number, autocomplete: "phone_number" %>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>ユーザーネーム</th>
+            <td><%= f.text_field :name, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td><%= f.email_field :email, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td><%= f.phone_field :phone_number, autocomplete: "phone_number" %></td>
+          </tr>
+        </tbody>
+      </table>
 
       <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
-
+      <%= link_to "退会する", users_withdraw_path(current_user),method: :put, class: "btn btn-danger", data: {confirm: '本当に退会しますか？'} %>
     <% end %>
 
-    <%= link_to "退会する", users_withdraw_path(current_user),method: :put, class: "btn btn-danger", data: {confirm: '本当に退会しますか？'} %>
   </div>
 </div>

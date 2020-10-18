@@ -64,3 +64,19 @@
     }
   }
 }
+
+// ユーザープロフィール編集
+.user-edit{
+  &__form{
+
+    table{
+      tbody{
+        tr{
+          th{
+            background: #eee;
+          }
+        }
+      }
+    }
+  }
+}
