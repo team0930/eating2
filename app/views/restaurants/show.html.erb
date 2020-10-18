@@ -17,10 +17,7 @@
 
 			</div>
 
-			<!-- 仮で置いてみました -->
-			<div class="">
-				<P>☆☆☆☆☆(仮)</P>
-			</div>
+				<p id="average"></p>
 
 			<div class="restaurant-intro">
 				<p><%= @restaurant.introduction %></p>
@@ -32,25 +29,34 @@
 <!-- 店舗情報table -->
 	<div class="row">
 		<div class="col-md-12">
-		<h4>店舗情報詳細</h4>
-		<table class="table table-bordered">
-			<tr>
-				<th>店名</th>
-				<td><%= @restaurant.name %></td>
-			</tr>
-			<tr>
-				<th>ジャンル</th>
-				<td><%= @restaurant.genre.category %></td>
-			</tr>
-			<tr>
-				<th>お問い合わせ</th>
-				<td><%= @restaurant.phone_number %></td>
-			</tr>
-			<tr>
-				<th>住所</th>
-				<td>〒<%= @restaurant.postal_code %><br><%= @restaurant.address %></td>
-			</tr>
-		</table>
+		  <h4>店舗情報詳細</h4>
+		</div>
+		<div class="col-md-12">
+		  <!-- いいねの非同期通信 -->
+      <div id="show_favorite_<%= @restaurant.id %>" class="restaurant">
+        <%= render 'favorites/favorite', restaurant: @restaurant %>
+      </div>
+    </div>
+    <div class="text-center">
+      <!-- ここまで -->
+		  <table class="table table-bordered">
+			  <tr>
+				  <th>店名</th>
+				  <td><%= @restaurant.name %></td>
+			  </tr>
+			  <tr>
+				  <th>ジャンル</th>
+				  <td><%= @restaurant.genre.category %></td>
+			  </tr>
+			  <tr>
+				  <th>お問い合わせ</th>
+				  <td><%= @restaurant.phone_number %></td>
+			  </tr>
+			  <tr>
+				  <th>住所</th>
+				  <td>〒<%= @restaurant.postal_code %><br><%= @restaurant.address %></td>
+			  </tr>
+		  </table>
 		</div>
 
 	</div>
@@ -192,6 +198,13 @@
 		</div>
 	</div>
 
+	<!-- comment？ -->
+	<div class="row">
+		<%= render 'restaurants/comment', restaurant: @restaurant %>
+	</div>
+
+
+
 <!-- ボタン系 -->
 	<div class="showpage-btn row">
 		<%= link_to '店舗一覧に戻る', restaurants_path, class:"btn btn-success" %>
@@ -204,8 +217,19 @@
 
 </div>
 
-<%# タブメニュー %>
 <script>
+  $('#average').raty({
+    size: 36, // 星のサイズ
+    score: "<%=@restaurant.comments.average(:star).to_f.round(1) %>",//星の平均値。小数点第１。
+    starOff: "<%=asset_path('star-off.png')%>",// 星なし
+    starOn: "<%=asset_path('star-on.png')%>",//星有り
+    starHalf: "<%=asset_path('star-half.png')%>",// 星半分
+    scoreName: 'review[star]',
+    half: true,// 星の半分の入力を実行
+    readOnly: true, //星の評価を固定化
+  });
+
+   <%# タブメニュー %>
 	$('#tab-contents .tab[id != "tab1"]').hide();
 
 	$('#tab-menu a').on('click', function(event) {
@@ -216,3 +240,4 @@
   		event.preventDefault();
 	});
 </script>
+
