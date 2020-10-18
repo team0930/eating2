@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   	resources :comments, only:[:create, :destroy]
   	resource :favorite, only: [:create, :destroy]
-    resources :menus, only: [:new, :create, :destroy]
+    resources :menus
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
