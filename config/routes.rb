@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'search' => 'searchs#search'
 
   devise_for :users
-  resources :users, only: [:show, :edit, :update] 
+  resources :users, only: [:show, :edit, :update]
   #退会処理用
-  patch 'users/:id/withdraw' => 'users#withdraw'
+  put 'users/:id/withdraw' => 'users#withdraw', as: 'users_withdraw'
 
   resources :restaurants do
   	collection do
