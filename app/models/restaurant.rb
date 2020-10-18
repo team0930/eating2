@@ -1,9 +1,9 @@
 class Restaurant < ApplicationRecord
 
 	belongs_to :user
-    has_many :comments, dependent: :destroy
-    has_many :favorites, dependent: :destroy
-
+  has_many :menus, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 	belongs_to :area
 	belongs_to :genre
 	has_many :pictures, dependent: :destroy
