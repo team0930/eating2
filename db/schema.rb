@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 2020_10_12_075242) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "restaurant_id", null: false
-    t.string "image_id"
+    t.string "image_id", null: false
     t.string "title", null: false
     t.text "content", null: false
-    t.float "star", default: 0.0, null: false
+    t.float "star", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

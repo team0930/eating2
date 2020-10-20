@@ -4,11 +4,10 @@
   	<!-- 検索フォーム -->
   	<div class="row">
 			<div class="search_form">
-				<%= form_with url: search_path, method: :get do |f| %>
-					<%= f.collection_select :area_id, Area.all, :id, :name, class:"select-controll" %>
-					<%= f.collection_select :genre_id, Genre.all, :id, :category, class:"select-controll" %>
-					<%= f.text_field :areas, placeholder: "エリア名" %>
-					<%= f.text_field :genres, placeholder: "ジャンル名"	%>
+  		<p>エリア・ジャンルからお店を探す</p>
+				<%= form_with url: search_path, method: :get, local: true do |f| %>
+					<%= f.collection_select :area_id, Area.all, :id, :name, class:"area_select", prompt: "エリアを選択" %>
+					<%= f.collection_select :genre_id, Genre.all, :id, :category, class:"genre-select", prompt: "ジャンルを選択" %>
 					<%= f.submit '検索' %>
 				<% end %>
 			</div>
