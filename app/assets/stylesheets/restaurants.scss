@@ -8,18 +8,38 @@
 }
 // [検索フォーム]
 .search_form {
-position: relative;
-  background: #FFFFFF;
+	position: relative;
+	box-sizing: border-box;
+  border: 2px solid #FF9933;
+  padding: 3px 10px;
+  border-radius: 3px;
   padding: 10px;
   text-align: center;
-  border-radius:6px;
-  border: solid 1px;
+}
+.search_content {
+	background-color: #fff;
 }
 .area_select {
-	height: 50px;
+	height: 40px;
+	padding: 8px;
+	margin-left: 10px;
+	border: none;
+	border-left: solid 1px #FF9933;
 }
 .genre-select {
-	height: 50px;
+	height: 40px;
+	padding: 8px;
+	border: none;
+	border-left: solid 1px #FF9933;
+}
+.search_btn {
+	height: 40px;
+	padding: 0 20px;
+	border: none;
+	border-radius: 3px;
+	background-color: #FF9933;
+	color: #fff;
+	margin-left: 5px;
 }
 
 // [ 店舗詳細ページ ]
