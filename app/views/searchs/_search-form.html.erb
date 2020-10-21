@@ -1,0 +1,12 @@
+<!-- 検索バー -->
+	<div class="search_form">
+		<%= form_with url: search_path, method: :get, local: true do |f| %>
+			<div class="search_content">
+				<span><strong>エリア・ジャンルからお店を探す</strong></span>
+				<%= f.collection_select :area_id, Area.all, :id, :name, {prompt: "エリア"}, class:"area_select" %>
+				<%= f.collection_select :genre_id, Genre.all, :id, :category, {prompt: "ジャンル"}, class:"genre-select" %>
+				<%= f.submit '検索', class: "search_btn" %>
+			</div>
+		<% end %>
+	</div>
+

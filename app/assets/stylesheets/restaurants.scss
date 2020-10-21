@@ -11,15 +11,15 @@
 	position: relative;
 	box-sizing: border-box;
   border: 2px solid #FF9933;
-  padding: 3px 10px;
   border-radius: 3px;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
 }
 .search_content {
 	background-color: #fff;
 }
 .area_select {
+  width: 120px;
 	height: 40px;
 	padding: 8px;
 	margin-left: 10px;
@@ -27,6 +27,7 @@
 	border-left: solid 1px #FF9933;
 }
 .genre-select {
+  width: 120px;
 	height: 40px;
 	padding: 8px;
 	border: none;
