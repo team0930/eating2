@@ -1,3 +1,22 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-image{
+	height: 800px;
+}
+
+#typo{
+	margin: 0;
+	padding: 0;
+	background-image: image-url("restaurant.jpg");
+	font-weight: bold;
+	font-size: 110px;
+	color: #fff;
+	text-align: center;
+	line-height: 600px;
+	height: 800px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
