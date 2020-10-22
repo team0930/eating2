@@ -17,18 +17,15 @@
         <!--ログイン時 -->
         <% if user_signed_in? %>
           <li class="menu">
-            <%#= link_to ' C',X_path(current_user),class:"glyphicon glyphicon-home" %>
-          </li>
-          <li class="menu">
-            <%#= link_to ' D',X_path, class:"glyphicon glyphicon-user" %>
-          </li>
-          <li class="menu">
-            <%#= link_to ' E',X_path ,class:"glyphicon glyphicon-list-alt" %>
-          </li>
-          <li class="menu">
             <a href="" data-toggle="modal" data-target="#sampleModal">
               <i class="fas fa-search glyphicon"></i>
             </a>
+          </li>
+         <li class="menu">
+            <%= link_to ' Home',root_path,class:"glyphicon glyphicon-home" %>
+          </li>
+          <li class="menu">
+            <%= link_to ' 一覧',restaurants_path, class:"glyphicon glyphicon-list-alt" %>
           </li>
           <li class="menu">
              <%= link_to ' Logout', destroy_user_session_path, method: :delete,class:"glyphicon glyphicon-log-out logout"%>
