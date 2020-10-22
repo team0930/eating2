@@ -3,6 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.form-box {
+	margin: 30px 0;
+}
+// [検索フォーム]
+.search_form {
+	position: relative;
+	box-sizing: border-box;
+  border: 2px solid #FF9933;
+  border-radius: 3px;
+  padding: 8px;
+  text-align: center;
+}
+.search_content {
+	background-color: #fff;
+}
+.area_select {
+  width: 120px;
+	height: 40px;
+	padding: 8px;
+	margin-left: 10px;
+	border: none;
+	border-left: solid 1px #FF9933;
+}
+.genre-select {
+  width: 120px;
+	height: 40px;
+	padding: 8px;
+	border: none;
+	border-left: solid 1px #FF9933;
+}
+.search_btn {
+	height: 40px;
+	padding: 0 20px;
+	border: none;
+	border-radius: 3px;
+	background-color: #FF9933;
+	color: #fff;
+	margin-left: 5px;
+}
+
 // [ 店舗詳細ページ ]
 .restaurant-show-page {
 	margin: 30px 0;

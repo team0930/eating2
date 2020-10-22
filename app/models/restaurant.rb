@@ -25,6 +25,10 @@ class Restaurant < ApplicationRecord
 
 	def favorited_by?(user)
       favorites.where(user_id: user.id).exists?
-    end
+  end
+
+  # def self.search(area_id, genre_id)
+  # 	Restaurant.where(['area_id LIKE ? OR genre_id LIKE ?', "%#{area_id}%", "%#{genre_id}%"])
+  # end
 
 end
