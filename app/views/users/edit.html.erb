@@ -22,6 +22,8 @@
       <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
       <%= link_to "退会する", users_withdraw_path(current_user),method: :put, class: "btn btn-danger", data: {confirm: '本当に退会しますか？'} %>
     <% end %>
-
+  </div>
+  <div class="user-edit__back">
+    <p><%= link_to "戻る", user_path(@user.id) %></p>
   </div>
 </div>

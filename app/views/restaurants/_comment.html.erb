@@ -20,7 +20,7 @@
                       <%= comment.content %>
                     </td>
                     <td>
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%= comment.star %>
+                      <i class="fas fa-star star-icon"></i><%= comment.star %>
                     </td>
                     <td>
                       <%=attachment_image_tag comment, :image, size: "40x40",  fallback: "no_image.jpg" %>

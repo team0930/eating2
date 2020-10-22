@@ -1,10 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-  <p>ユーザーネーム</p>
-  <p><%= @user.name %></p>
-  <p>メールアドレス</p>
-  <p><%= @user.email %></p>
-  <p>電話番号</p>
-  <p><%= @user.phone_number %></p>
-
-<p>登録情報の変更は<%= link_to "こちら", edit_user_path(@user) %></p>
+<div class="user-show container">
+  <div class="user-show__form">
+    <h2>ユーザー情報</h2>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th>ユーザーネーム</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= @user.phone_number %></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>登録情報の変更は<%= link_to "こちら", edit_user_path(@user) %></p>
+  </div>
+</div>

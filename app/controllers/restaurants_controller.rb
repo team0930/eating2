@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
     @alacarte_menus = Menu.where(category: "単品料理")
     @drink_menus = Menu.where(category: "ドリンク")
     @desert_menus = Menu.where(category: "デザート")
+
   end
 
   def new

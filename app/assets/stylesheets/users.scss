@@ -66,7 +66,8 @@
 }
 
 // ユーザープロフィール編集
-.user-edit{
+.user-edit,
+.user-show{
   &__form{
 
     table{
@@ -78,5 +79,8 @@
         }
       }
     }
+  }
+  &__back{
+    margin-top: 30px;
   }
 }

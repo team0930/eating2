@@ -1,62 +1,65 @@
-<div class="container">
+<div class="restaurant-new container">
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-
-			<h2 class="restaurant-new-title">店舗登録</h2>
+		<div class="col-md-6 col-md-offset-3">
+			<div class="row">
+				<h2 class="restaurant-new-title">店舗登録フォーム</h2>
+			</div>
 
 			<%= form_with model: @restaurant, local:true, class: "form" do |f| %>
-
-				<div class="field">
-					<%= f.label :name, "店名" %><br>
-					<%= f.text_field :name %>
+				<div class="row">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th><%= f.label :name, "店名" %></th>
+								<td><%= f.text_field :name %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :introduction, "説明" %></th>
+								<td><%= f.text_area :introduction %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :phone_number, "電話番号" %></th>
+								<td><%= f.text_field :phone_number %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :email, "メールアドレス" %></th>
+								<td><%= f.text_field :email %></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th><%= f.label :エリア %></th>
+								<td><%= f.collection_select :area_id, Area.all, :id, :name, class:"select-controll" %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :postal_code, "郵便番号" %></th>
+								<td><%= f.text_field :postal_code %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :address, "住所" %></th>
+								<td><%= f.text_field :address %></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered">
+						<tr>
+							<th><%= f.label :ジャンル %></th>
+							<td><%= f.collection_select :genre_id, Genre.all, :id, :category, class:"select-controll" %></td>
+						</tr>
+						<tr>
+							<th><%= f.label :pictures_images, "写真" %></th>
+							<td><%= f.attachment_field :pictures_images, multiple: true %></td>
+						</tr>
+					</table>
 				</div>
-
-				<div class="field">
-					<%= f.label :introduction, "説明" %><br>
-					<%= f.text_area :introduction %>
+				<div class="row">
+					<div class="submit-btn">
+						<%= f.submit "投稿", class: "btn btn-primary" %>
+					</div>
 				</div>
-
-				<div class="field">
-					<%= f.label :phone_number, "電話番号" %><br>
-					<%= f.text_field :phone_number %>
-				</div>
-
-				<div class="form">
-					<%= f.label :エリア %><br>
-					<%= f.collection_select :area_id, Area.all, :id, :name, class:"select-controll" %>
-				</div>
-
-				<div class="field">
-					<%= f.label :postal_code, "郵便番号" %><br>
-					<%= f.text_field :postal_code %>
-				</div>
-
-				<div class="field">
-					<%= f.label :address, "住所" %><br>
-					<%= f.text_field :address %>
-				</div>
-
-				<div class="field">
-					<%= f.label :email, "メールアドレス" %><br>
-					<%= f.text_field :email %>
-				</div>
-
-				<div class="form">
-					<%= f.label :ジャンル %><br>
-					<%= f.collection_select :genre_id, Genre.all, :id, :category, class:"select-controll" %>
-				</div>
-
-				<div class="field">
-					<%= f.label :pictures_images, "写真" %><br>
-					<%= f.attachment_field :pictures_images, multiple: true %>
-				</div>
-
-				<div class="submit-btn">
-					<%= f.submit "投稿", class: "btn btn-primary" %>
-			    </div>
-
 			<% end %>
-
 		</div>
 	</div>
 </div>
