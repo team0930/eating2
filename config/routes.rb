@@ -11,15 +11,15 @@ Rails.application.routes.draw do
   put 'users/:id/withdraw' => 'users#withdraw', as: 'users_withdraw'
 
   resources :restaurants do
-  	collection do
+    collection do
       # レストラン検索ページ
       get 'select'
       # レストラン検索結果ページ
       get 'search'
     end
-  	resources :comments, only:[:create, :destroy]
-  	resource :favorite, only: [:create, :destroy]
-    resources :menus
+    resources :comments, only:[:create, :destroy]
+    resource :favorite, only: [:create, :destroy]
+    resources :menus, only: [:new, :create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

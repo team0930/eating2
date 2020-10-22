@@ -1,2 +1,0 @@
-class RestaurantMenusController < ApplicationController
-end
