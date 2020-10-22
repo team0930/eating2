@@ -20,3 +20,21 @@
 .showpage-btn {
 	text-align: center;
 }
+
+.restaurant-new,
+.restaurant-edit{
+	h2{
+		padding: 10px 0;
+	}
+	.table{
+		tbody{
+			th{
+				width: 30%;
+				background-color: #eee;
+			}
+			th,td{
+				padding: 10px;
+			}
+		}
+	}
+}
