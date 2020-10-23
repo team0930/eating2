@@ -18,17 +18,17 @@
         <% if user_signed_in? %>
           <li class="menu">
             <a href="" data-toggle="modal" data-target="#sampleModal">
-              <i class="fas fa-search glyphicon"></i>
+              <i class="z fas fa-search"></i>
             </a>
           </li>
          <li class="menu">
-            <%= link_to ' Home',root_path,class:"glyphicon glyphicon-home" %>
+            <%= link_to 'Home',root_path,class:"z fas fa-home" %>
           </li>
           <li class="menu">
-            <%= link_to ' 一覧',restaurants_path, class:"glyphicon glyphicon-list-alt" %>
+            <%= link_to 'Restaurants',restaurants_path, class:"z fas fa-utensils" %>
           </li>
           <li class="menu">
-             <%= link_to ' Logout', destroy_user_session_path, method: :delete,class:"glyphicon glyphicon-log-out logout"%>
+             <%= link_to ' Logout', destroy_user_session_path, method: :delete,class:"z fas fa-sign-out-alt"%>
           </li>
             <!--ログアウト時 -->
         <% else %>
@@ -65,15 +65,16 @@
         <h4 class="modal-title">検索</h4>
       </div>
       <div class="modal-body">
-        <!-- ログイン時のみ検索ボタンをヘッダーに表示 -->
-        <%# if user_signed_in? %>
-          <%#= form_tag(search_path, :method => 'get') do %>
-            <%#= select_tag(:option, options_for_select([["ユーザー", "1"],["投稿","2"]]))%>
-            <%#= text_field_tag :search %>
-            <%#= submit_tag '検索' %>
-          <%# end %>
-        <%# end %>
-        <!-- ここまで -->
+        <div class="search_form">
+          <%= form_with url: search_path, method: :get, local: true do |f| %>
+            <div class="search_content">
+              <span><strong>エリア・ジャンルからお店を探す</strong></span>
+              <%= f.collection_select :area_id, Area.all, :id, :name, {prompt: "エリア"}, class:"area_select" %>
+              <%= f.collection_select :genre_id, Genre.all, :id, :category, {prompt: "ジャンル"}, class:"genre-select" %>
+              <%= f.submit '検索', class: "search_btn" %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
