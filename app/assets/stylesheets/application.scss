@@ -124,6 +124,32 @@ $header-height: 50px;
   color: white;
 }
 
+.z{
+  color: white;
+}
+
+#slide-show{
+  height: 860px;
+  width: 100%;
+}
+
+.image1 {
+  background-image: url(image1.jpg);
+  background-size: contain;
+}
+.image2 {
+  background-image: url(image2.jpg);
+  background-size: contain;
+}
+.image3 {
+  background-image: url(image3.jpg);
+  background-size: contain;
+}
+.image4 {
+  background-image: url(image4.jpg);
+  background-size: contain;
+}
+
 /* custom bootstrap */
 .navbar-toggle {
   .icon-bar {
