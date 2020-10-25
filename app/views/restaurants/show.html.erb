@@ -17,7 +17,7 @@
 
 			</div>
 
-				<p id="average"></p>
+				<p id="average" class="stars"></p>
 
 			<div class="restaurant-intro">
 				<p><%= @restaurant.introduction %></p>
@@ -63,8 +63,8 @@
 
 <!-- メニューのタブ -->
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<h4>メニュー</h4>
+		<div class="text-center">
+			<h4 class="text-center">メニュー</h4>
 			<div class="area">
 				<ul id="tab-menu" class="clearfix">
 					<li><a href="#tab1" class="active">コース</a></li>
@@ -199,7 +199,7 @@
 	</div>
 
 	<!-- comment？ -->
-	<div class="row">
+	<div class="row space">
 		<%= render 'restaurants/comment', restaurant: @restaurant %>
 	</div>
 
