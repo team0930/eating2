@@ -7,6 +7,7 @@
   	</div>
 
     <div class="row">
+    	<div class="col-md-8 col-md-offset-2">
 
         <table class='table table-hover table-inverse'>
         	<tbody>
@@ -15,14 +16,16 @@
 
 				    <% @restaurants.each do |r| %>
 				    <tr>
-						<td><%= attachment_image_tag r.pictures[0], :image, size: '150x150', class: "blog-index-photo" %></td>
-						<td><%= r.name %><br>
-						    <%= r.area.name %></td>
+						<td><%= attachment_image_tag r.pictures[0], :image, size: '100x100', class: "blog-index-photo" %></td>
+						<td class='index-restaurant-name'><%= r.name %><br>
+						    <span class="label label-default"><%= r.area.name %></span>
+						</td>
 						<td><%= link_to '店舗詳細へ', restaurant_path(r.id), class:"btn btn-warning" %></td>
 					</tr>
 					<% end %>
 			</tbody>
 		</table>
+	    </div>
 
 	</div>
   </div>
